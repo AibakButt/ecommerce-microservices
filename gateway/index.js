@@ -8,9 +8,9 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-app.get('/customer', proxy('http://localhost:8001'))
-app.get('/shopping', proxy('http://localhost:8003'))
-app.get('/', proxy('http://localhost:8002'))
+app.use('/customer', proxy('http://localhost:8001'))
+app.use('/shopping', proxy('http://localhost:8003'))
+app.use('/', proxy('http://localhost:8002'))
 
 
 const PORT = 8000;
